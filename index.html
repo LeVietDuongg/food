@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Ăn Gì Đây? - Website giúp bạn chọn món ăn vặt Việt Nam với vòng quay may mắn. Đồ ăn vặt, đồ ăn khuya giá sinh viên!">
+    <title>Ăn Gì Đây? | Vòng Quay Đồ Ăn Vặt Việt Nam 🍜</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container header-content">
+            <a href="#" class="logo">
+                <span class="logo-icon">🍜</span>
+                <span class="logo-text">Ăn Gì Đây?</span>
+            </a>
+            <nav class="nav">
+                <a href="#home" class="nav-link active">Trang chủ</a>
+                <a href="#menu" class="nav-link">Thực đơn</a>
+                <a href="#spin" class="nav-link">Vòng quay</a>
+                <a href="#history" class="nav-link">Lịch sử</a>
+            </nav>
+            <button class="cta-btn header-cta" onclick="scrollToSpin()">
+                🎰 Quay ngay!
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+        <div class="container hero-content">
+            <div class="hero-text">
+                <span class="hero-badge">🔥 Đồ ăn vặt & Ăn khuya</span>
+                <h1>Hôm nay <br><span class="gradient-text">ăn gì đây?</span></h1>
+                <p class="hero-desc">Không biết ăn gì? Để vòng quay may mắn quyết định giúp bạn! Toàn món ngon giá sinh
+                    viên từ <strong>5k - 35k</strong> 🎉</p>
+                <div class="hero-actions">
+                    <button class="cta-btn primary-btn" onclick="scrollToSpin()">
+                        <span>🎡</span> Quay vòng quay
+                    </button>
+                    <button class="cta-btn secondary-btn" onclick="scrollToMenu()">
+                        <span>📋</span> Xem thực đơn
+                    </button>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">12+</span>
+                        <span class="stat-label">Món ăn</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">5k</span>
+                        <span class="stat-label">Giá từ</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Ngon miệng</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-image-wrapper">
+                    <img src="images/hero_food.png" alt="Đồ ăn vặt Việt Nam" />
+                    <div class="floating-card card-1">
+                        <span class="card-emoji">🍜</span>
+                        <span>Phở bò</span>
+                        <span class="card-price">35k</span>
+                    </div>
+                    <div class="floating-card card-2">
+                        <span class="card-emoji">🥖</span>
+                        <span>Bánh mì</span>
+                        <span class="card-price">15k</span>
+                    </div>
+                    <div class="floating-card card-3">
+                        <span class="card-emoji">🧋</span>
+                        <span>Trà sữa</span>
+                        <span class="card-price">25k</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-wave">
+            <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+                <path d="M0,60 C360,120 720,0 1080,60 C1260,90 1380,60 1440,60 L1440,120 L0,120 Z" fill="#0f0f1a" />
+            </svg>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu-section" id="menu">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">🍽️ Thực đơn</span>
+                <h2>Món ăn vặt <span class="gradient-text">siêu hot</span></h2>
+                <p>Tổng hợp các món ăn vặt, ăn khuya quen thuộc của sinh viên Việt Nam</p>
+            </div>
+
+            <div class="filter-tabs">
+                <button class="filter-btn active" data-filter="all">Tất cả</button>
+                <button class="filter-btn" data-filter="snack">🍿 Ăn vặt</button>
+                <button class="filter-btn" data-filter="meal">🍚 Cơm/Bún/Phở</button>
+                <button class="filter-btn" data-filter="drink">🧋 Đồ uống/Chè</button>
+                <button class="filter-btn" data-filter="night">🌙 Ăn khuya</button>
+            </div>
+
+            <div class="food-grid" id="foodGrid">
+                <!-- Food cards will be inserted by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Spin Wheel Section -->
+    <section class="spin-section" id="spin">
+        <div class="spin-bg-shapes">
+            <div class="spin-shape spin-shape-1"></div>
+            <div class="spin-shape spin-shape-2"></div>
+        </div>
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">🎰 Vòng quay may mắn</span>
+                <h2>Để vòng quay <span class="gradient-text">chọn giúp bạn!</span></h2>
+                <p>Nhập tên của bạn và quay vòng quay để xem hôm nay ăn gì nhé!</p>
+            </div>
+
+            <div class="spin-container">
+                <div class="spin-left">
+                    <!-- Name Input -->
+                    <div class="name-input-card" id="nameCard">
+                        <div class="input-header">
+                            <span class="input-icon">👋</span>
+                            <h3>Xin chào!</h3>
+                            <p>Nhập tên bạn để bắt đầu quay</p>
+                        </div>
+                        <div class="input-group">
+                            <input type="text" id="userName" placeholder="Nhập tên của bạn..." maxlength="30"
+                                autocomplete="off">
+                            <button class="confirm-btn" id="confirmBtn" onclick="confirmName()">
+                                Xác nhận ✨
+                            </button>
+                        </div>
+                        <div class="input-note">
+                            <span>💡</span> Tên sẽ hiển thị khi bạn nhận kết quả
+                        </div>
+                    </div>
+
+                    <!-- Welcome Card (hidden initially) -->
+                    <div class="welcome-card hidden" id="welcomeCard">
+                        <div class="welcome-avatar">🎉</div>
+                        <h3>Chào <span id="displayName"></span>!</h3>
+                        <p>Hãy bấm nút <strong>QUAY</strong> để xem hôm nay ăn gì nhé!</p>
+                        <button class="change-name-btn" onclick="changeName()">Đổi tên</button>
+                    </div>
+
+                    <!-- Spin Button -->
+                    <button class="spin-btn disabled" id="spinBtn" onclick="spinWheel()" disabled>
+                        <span class="spin-btn-icon">🎡</span>
+                        <span class="spin-btn-text">QUAY NGAY!</span>
+                        <span class="spin-btn-sub">Nhập tên trước nhé!</span>
+                    </button>
+                </div>
+
+                <div class="spin-right">
+                    <div class="wheel-container">
+                        <div class="wheel-pointer">▼</div>
+                        <canvas id="wheelCanvas" width="440" height="440"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Result Modal -->
+            <div class="result-overlay hidden" id="resultOverlay">
+                <div class="result-modal" id="resultModal">
+                    <button class="close-modal" onclick="closeResult()">✕</button>
+                    <div class="result-confetti" id="confetti"></div>
+                    <div class="result-content">
+                        <div class="result-emoji" id="resultEmoji">🍜</div>
+                        <h2 id="resultTitle">Kết quả</h2>
+                        <div class="result-food-name" id="resultFoodName">---</div>
+                        <div class="result-price" id="resultPrice">---</div>
+                        <p class="result-message" id="resultMessage"></p>
+                        <img class="result-image" id="resultImage" src="" alt="Food" />
+                        <button class="cta-btn primary-btn spin-again-btn" onclick="closeResult()">
+                            🎡 Quay lại lần nữa!
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- History Section -->
+    <section class="history-section" id="history">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">📜 Lịch sử quay</span>
+                <h2>Mọi người đã <span class="gradient-text">chọn gì?</span></h2>
+                <p>Xem kết quả quay của tất cả mọi người - cập nhật realtime!</p>
+            </div>
+
+            <div class="history-stats-bar">
+                <div class="history-stat-item">
+                    <span class="history-stat-icon">🎰</span>
+                    <span class="history-stat-value" id="totalSpins">0</span>
+                    <span class="history-stat-label">Lượt quay</span>
+                </div>
+                <div class="history-stat-item">
+                    <span class="history-stat-icon">👥</span>
+                    <span class="history-stat-value" id="totalUsers">0</span>
+                    <span class="history-stat-label">Người chơi</span>
+                </div>
+                <div class="history-stat-item">
+                    <span class="history-stat-icon">🏆</span>
+                    <span class="history-stat-value" id="topFood">---</span>
+                    <span class="history-stat-label">Món hot nhất</span>
+                </div>
+            </div>
+
+            <div class="history-grid" id="historyGrid">
+                <div class="history-empty">
+                    <span class="history-empty-icon">🎡</span>
+                    <p>Chưa có ai quay. Hãy là người đầu tiên!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-icon">🍜</span>
+                    <span class="logo-text">Ăn Gì Đây?</span>
+                    <p>Website giúp sinh viên chọn món ăn vặt mỗi ngày 🎉</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#home">Trang chủ</a>
+                    <a href="#menu">Thực đơn</a>
+                    <a href="#spin">Vòng quay</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Made with ❤️ for Vietnamese Students | © 2026</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-database-compat.js"></script>
+    <script src="firebase-config.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
