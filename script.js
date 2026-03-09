@@ -145,6 +145,126 @@ const foods = [
         category: ["meal"],
         tags: ["Đặc sản", "Quốc hồn"],
         color: "#ffc048"
+    },
+    {
+        id: 13,
+        name: "Gỏi cuốn",
+        price: "20k",
+        priceNum: 20000,
+        image: "images/goi_cuon.png",
+        emoji: "🥬",
+        desc: "Gỏi cuốn tôm thịt cuốn cùng bún, rau sống, chấm tương đậu phộng béo ngậy",
+        category: ["snack", "meal"],
+        tags: ["Healthy", "Thanh mát"],
+        color: "#00b894"
+    },
+    {
+        id: 14,
+        name: "Bánh xèo",
+        price: "25k",
+        priceNum: 25000,
+        image: "images/banh_xeo.png",
+        emoji: "🥞",
+        desc: "Bánh xèo giòn rụm nhân tôm, thịt, giá đỗ, ăn kèm rau sống cuốn bánh tráng",
+        category: ["meal", "snack"],
+        tags: ["Đặc sản", "Giòn rụm"],
+        color: "#fdcb6e"
+    },
+    {
+        id: 15,
+        name: "Bún chả",
+        price: "35k",
+        priceNum: 35000,
+        image: "images/bun_cha.png",
+        emoji: "🍖",
+        desc: "Bún chả Hà Nội với chả viên, thịt nướng thơm lừng, nước chấm chua ngọt",
+        category: ["meal"],
+        tags: ["Đặc sản HN", "No bụng"],
+        color: "#e17055"
+    },
+    {
+        id: 16,
+        name: "Nem nướng",
+        price: "25k",
+        priceNum: 25000,
+        image: "images/nem_nuong.png",
+        emoji: "🥩",
+        desc: "Nem nướng Nha Trang cuốn bánh tráng, rau sống, bún, chấm nước mắm pha tỏi ớt",
+        category: ["snack", "night"],
+        tags: ["Nhậu vặt", "Đặc sản"],
+        color: "#d63031"
+    },
+    {
+        id: 17,
+        name: "Bánh cuốn",
+        price: "20k",
+        priceNum: 20000,
+        image: "images/banh_cuon.png",
+        emoji: "🫔",
+        desc: "Bánh cuốn nóng nhân thịt, mộc nhĩ, hành phi, ăn cùng chả lụa, nước mắm",
+        category: ["meal"],
+        tags: ["Ăn sáng", "Truyền thống"],
+        color: "#fab1a0"
+    },
+    {
+        id: 18,
+        name: "Trứng vịt lộn",
+        price: "10k",
+        priceNum: 10000,
+        image: "images/xien_que.png",
+        emoji: "🥚",
+        desc: "Hột vịt lộn nóng hổi ăn với rau răm, muối tiêu chanh, món khuya kinh điển",
+        category: ["night", "snack"],
+        tags: ["Ăn khuya", "Bổ dưỡng"],
+        color: "#6c5ce7"
+    },
+    {
+        id: 19,
+        name: "Gà rán",
+        price: "30k",
+        priceNum: 30000,
+        image: "images/banh_trang_nuong.png",
+        emoji: "🍗",
+        desc: "Gà rán giòn tan phủ sốt cay ngọt kiểu Hàn, thêm phô mai kéo sợi siêu ngon",
+        category: ["snack", "meal"],
+        tags: ["Chiên giòn", "Hot trend"],
+        color: "#e84393"
+    },
+    {
+        id: 20,
+        name: "Bánh bông lan trứng muối",
+        price: "15k",
+        priceNum: 15000,
+        image: "images/che.png",
+        emoji: "🧁",
+        desc: "Bánh bông lan trứng muối mềm xốp, nhân trứng muối béo ngậy tan trong miệng",
+        category: ["snack"],
+        tags: ["Ăn vặt", "Bánh ngọt"],
+        color: "#f0932b"
+    },
+    {
+        id: 21,
+        name: "Nước mía",
+        price: "10k",
+        priceNum: 10000,
+        image: "images/tra_sua.png",
+        emoji: "🥤",
+        desc: "Nước mía tươi ép tại chỗ, thêm tắc, mát lạnh giải nhiệt ngày hè oi bức",
+        category: ["drink"],
+        tags: ["Giải khát", "Tự nhiên"],
+        color: "#badc58"
+    },
+    {
+        id: 22,
+        name: "Tokbokki",
+        price: "25k",
+        priceNum: 25000,
+        image: "images/mi_cay.png",
+        emoji: "🍡",
+        desc: "Bánh gạo Hàn Quốc sốt cay ngọt, thêm chả cá, trứng luộc, phô mai kéo sợi",
+        category: ["snack", "night"],
+        tags: ["Hot trend", "Cay nóng"],
+        color: "#eb4d4b"
     }
 ];
 
@@ -202,7 +322,10 @@ const ctx = canvas.getContext('2d');
 const wheelColors = [
     '#ff6b35', '#ff4757', '#e91e63', '#2ed573',
     '#ff3838', '#ff9f43', '#ffa502', '#7bed9f',
-    '#cd6133', '#a55eea', '#ff6348', '#ffc048'
+    '#cd6133', '#a55eea', '#ff6348', '#ffc048',
+    '#00b894', '#fdcb6e', '#e17055', '#d63031',
+    '#fab1a0', '#6c5ce7', '#e84393', '#f0932b',
+    '#badc58', '#eb4d4b'
 ];
 
 let currentAngle = 0;
@@ -252,19 +375,19 @@ function drawWheel() {
         ctx.rotate(startAngle + sliceAngle / 2);
 
         // Emoji
-        ctx.font = '22px sans-serif';
+        ctx.font = '16px sans-serif';
         ctx.textAlign = 'center';
-        ctx.fillText(food.emoji, radius * 0.6, 6);
+        ctx.fillText(food.emoji, radius * 0.65, 5);
 
         // Name
-        ctx.font = 'bold 11px "Be Vietnam Pro", sans-serif';
+        ctx.font = 'bold 9px "Be Vietnam Pro", sans-serif';
         ctx.fillStyle = '#fff';
         ctx.textAlign = 'center';
         ctx.shadowColor = 'rgba(0,0,0,0.5)';
         ctx.shadowBlur = 4;
 
-        const name = food.name.length > 10 ? food.name.substring(0, 10) + '..' : food.name;
-        ctx.fillText(name, radius * 0.38, 5);
+        const name = food.name.length > 8 ? food.name.substring(0, 8) + '..' : food.name;
+        ctx.fillText(name, radius * 0.42, 4);
 
         ctx.restore();
     });
